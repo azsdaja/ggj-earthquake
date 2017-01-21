@@ -20,8 +20,7 @@ public class Button_Bulding : MonoBehaviour {
 
    public void createBuilding(GameObject obj)
     {
-        if (building) Destroy(building);
-        building = Instantiate(obj,new Vector3(0, 3, 0), Quaternion.identity);
+        building = Instantiate(obj,new Vector3(0, 8.7f, 0), Quaternion.identity);
         selectedBuilding = true;
         Debug.Log(building);
     }
@@ -37,13 +36,25 @@ public class Button_Bulding : MonoBehaviour {
                 {
                     if (building.transform.tag == "P1_Building")
                     {
-                        sceneManager.FirstPlayerBuildings.Add(Instantiate(building));
+                        Rigidbody[] sections = building.GetComponentsInChildren<Rigidbody>();
+                        foreach (Rigidbody child in sections)
+                        {
+                            child.isKinematic = false;
+                            child.useGravity = true;
+                        }
+                        sceneManager.FirstPlayerBuildings.Add(building);
                         sceneManager.P1UIActive = false;
                         sceneManager.P2UIActive = true;
                     }
                     else if (building.transform.tag == "P2_Building")
                     {
-                        sceneManager.SecondPlayerBuildings.Add(Instantiate(building));
+                        Rigidbody[] sections = building.GetComponentsInChildren<Rigidbody>();
+                        foreach (Rigidbody child in sections)
+                        {
+                            child.isKinematic = false;
+                            child.useGravity = true;
+                        }
+                        sceneManager.SecondPlayerBuildings.Add(building);
                         sceneManager.P1UIActive = true;
                         sceneManager.P2UIActive = false;
                     }
@@ -53,7 +64,7 @@ public class Button_Bulding : MonoBehaviour {
                 if (hit.transform.tag == "Ground")
                 {
                     newPosition = hit.point;
-                    newPosition.y = 1.5f;
+                    newPosition.y = 8.7f;
 
                     building.transform.position = newPosition;
                 }

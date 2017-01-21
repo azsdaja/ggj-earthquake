@@ -83,7 +83,6 @@ public class ClickDetector : MonoBehaviour
             P1Active = true;
             P2Active = false;
             placeTimeLeft = placeMaxTime;
-
         }
     }
 
