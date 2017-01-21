@@ -7,9 +7,11 @@ public class ClickDetector : MonoBehaviour
     public bool P1Active = true, P2Active = false;
     public float placeTimeLeft, placeMaxTime = 5;
     public Text timeLeftText;
+    public GameObject FightButton; 
     GameObject P1Wave, P2Wave;
 
-    private bool earthquakeActive = false;
+    private bool waitForActive = false;
+    private float waitForActiveSec = 5;
     private int active=0;
     
    // Use this for initialization
@@ -39,7 +41,7 @@ public class ClickDetector : MonoBehaviour
             placeTimeLeft = placeMaxTime;
             active++;
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && waitForActive == false)
       {
          RaycastHit hit;
          Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -78,16 +80,36 @@ public class ClickDetector : MonoBehaviour
          }
       }
 
-        if (active == 2)
+        if (active == 2 && FightButton.activeSelf == false)
         {
-            if (P1Wave) StartEarthquake(P1Wave, 300);
-            if (P2Wave) StartEarthquake(P2Wave, 300);
-            active = 0;
-            P1Active = true;
-            P2Active = false;
-            placeTimeLeft = placeMaxTime;
-
+            waitForActive = true;
+            FightButton.SetActive(true);
+            waitForActiveSec = 5;
         }
+        if (waitForActive)
+        {
+            waitForActiveSec -= Time.unscaledDeltaTime;
+            timeLeftText.gameObject.SetActive(false);
+            if (waitForActiveSec <= 0)
+            {
+                active = 0;
+                P1Active = true;
+                P2Active = false;
+                placeTimeLeft = placeMaxTime;
+                FightButton.SetActive(false);
+                waitForActive = false;
+                timeLeftText.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    public void ActivateFightButton()
+    {
+        if (P1Wave) StartEarthquake(P1Wave, 300);
+        if (P2Wave) StartEarthquake(P2Wave, 300);
+        
+        
+        
     }
 
     void StartEarthquake(GameObject tile,int f)
