@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Creator : MonoBehaviour
 {
-
    public GameObject Origin;
 
 	// Use this for initialization
@@ -27,8 +26,16 @@ public class Creator : MonoBehaviour
 	   for (int i = 0; i < gridSize; i++)
 	   {
 	      for (int j = 0; j < gridSize; j++)
-	      {
-	         GameObject currentPiece = objects[new Position(i, j)];
+         {
+            GameObject currentPiece = objects[new Position(i, j)];
+            if (Random.Range(0.0f, 1.0f) > 0.985f)
+	         {
+               Object treeToLoad = Resources.Load("Prefabs/Tree", typeof(GameObject));
+               GameObject instance = Instantiate(treeToLoad, currentPiece.GetComponent<PieceOfTerrain>().MovablePart.transform) as GameObject;
+               instance.transform.Translate(0f, 4.0f, 0f);
+               instance.transform.localScale = new Vector3(3f, 3f, 3f);
+            }
+
 	         var currentMovable = currentPiece.GetComponent<PieceOfTerrain>().MovablePart;
             var upperNeighbourPosition = new Position(i+1, j);
 
