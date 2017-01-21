@@ -18,7 +18,7 @@ public class Creator : MonoBehaviour
 	      {
 	         float iRescaled = (float) i/3f;
 	         float jRescaled = (float) j/4f;
-	         float height = Mathf.Sin(iRescaled) + Mathf.Cos(jRescaled);
+	         float height = 1f;//Mathf.Sin(iRescaled) + Mathf.Cos(jRescaled);
             GameObject instance = Instantiate(objectToLoad, new Vector3(i, .5f + height*.5f, j), Quaternion.identity) as GameObject;
 	         objects[new Position(i, j)] = instance;
 	      }
