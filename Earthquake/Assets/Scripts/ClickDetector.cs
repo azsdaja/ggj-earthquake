@@ -9,8 +9,9 @@ public class ClickDetector : MonoBehaviour
     public Text timeLeftText;
     GameObject P1Wave, P2Wave;
 
+    private bool earthquakeActive = false;
     private int active=0;
-   
+    
    // Use this for initialization
    void Start()
    {
@@ -44,7 +45,7 @@ public class ClickDetector : MonoBehaviour
          Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
          if (Physics.Raycast(ray, out hit))
          {
-                if (P1Active)
+                if (P1Active && hit.transform.tag == "Ground")
                 {
                     if (P1Wave == null)
                     {
@@ -57,8 +58,9 @@ public class ClickDetector : MonoBehaviour
                         P1Wave = hit.transform.gameObject;
                         P1Wave.GetComponent<Renderer>().material.color = Color.red;
                     }
+
                 }
-                if(P2Active)
+                if(P2Active && hit.transform.tag == "Ground")
                 {
                     if (P2Wave == null)
                     {
@@ -70,19 +72,21 @@ public class ClickDetector : MonoBehaviour
                         P2Wave.GetComponent<Renderer>().material.color = Color.white;
                         P2Wave = hit.transform.gameObject;
                         P2Wave.GetComponent<Renderer>().material.color = Color.blue;
-                    }                    
+                    }
+   
                 }
          }
       }
 
         if (active == 2)
         {
-            StartEarthquake(P1Wave, 300);
-            StartEarthquake(P2Wave, 300);
+            if (P1Wave) StartEarthquake(P1Wave, 300);
+            if (P2Wave) StartEarthquake(P2Wave, 300);
             active = 0;
             P1Active = true;
             P2Active = false;
             placeTimeLeft = placeMaxTime;
+
         }
     }
 
