@@ -21,41 +21,44 @@ public class Button_Bulding : MonoBehaviour {
    public void createBuilding(GameObject obj)
     {
         if (building) Destroy(building);
-        building = Instantiate(obj, Vector3.zero, Quaternion.identity);
+        building = Instantiate(obj,new Vector3(0, 3, 0), Quaternion.identity);
         selectedBuilding = true;
         Debug.Log(building);
     }
     Vector3 newPosition;
     void Update()
     {
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (sceneManager.editorActive && selectedBuilding == true && Physics.Raycast(ray, out hit))
+        if (sceneManager.editorActive)
         {
-            if (Input.GetMouseButtonDown(0))
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (selectedBuilding == true && Physics.Raycast(ray, out hit))
             {
-                if (building.transform.tag == "P1_Building")
+                if (Input.GetMouseButtonDown(0))
                 {
-                    sceneManager.FirstPlayerBuildings.Add(Instantiate(building));
-                    sceneManager.P1UIActive = false;
-                    sceneManager.P2UIActive = true;
+                    if (building.transform.tag == "P1_Building")
+                    {
+                        sceneManager.FirstPlayerBuildings.Add(Instantiate(building));
+                        sceneManager.P1UIActive = false;
+                        sceneManager.P2UIActive = true;
+                    }
+                    else if (building.transform.tag == "P2_Building")
+                    {
+                        sceneManager.SecondPlayerBuildings.Add(Instantiate(building));
+                        sceneManager.P1UIActive = true;
+                        sceneManager.P2UIActive = false;
+                    }
+                    sceneManager.timeLeft = sceneManager.maxTime;
+                    selectedBuilding = false;
                 }
-                else if (building.transform.tag == "P2_Building")
+                if (hit.transform.tag == "Ground")
                 {
-                    sceneManager.SecondPlayerBuildings.Add(Instantiate(building));
-                    sceneManager.P1UIActive = true;
-                    sceneManager.P2UIActive = false;
+                    newPosition = hit.point;
+                    newPosition.y = 1.5f;
+
+                    building.transform.position = newPosition;
                 }
-                sceneManager.timeLeft = sceneManager.maxTime;
-                selectedBuilding = false;
-            }
-            if (hit.transform.tag == "Ground")
-            {
-                newPosition = hit.point;
-                newPosition.y = 0.5f;
 
-                building.transform.position = newPosition;
             }
-
         }
     }
 }

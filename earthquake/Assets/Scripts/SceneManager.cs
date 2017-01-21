@@ -13,6 +13,7 @@ public class SceneManager : MonoBehaviour
     public bool P1UIActive = true, P2UIActive = true;
     public int maxBuildings = 3;
     public Button_Bulding buttonScript;
+    public GameObject clickDetector;
 
     public float maxTime = 10;
     public float timeLeft;
@@ -25,6 +26,7 @@ public class SceneManager : MonoBehaviour
         PlayerTwoBuldingsText.GetComponent<Text>().text = maxBuildings.ToString();
         timeLeftText = TimeLeftObject.GetComponent<Text>();
         buttonScript = GameObject.FindGameObjectWithTag("UI_Manager").GetComponent<Button_Bulding>();
+        
     }
 
     void SwitchUI()
@@ -53,6 +55,8 @@ public class SceneManager : MonoBehaviour
         if ((maxBuildings - SecondPlayerBuildings.Count == 0) && (maxBuildings - FirstPlayerBuildings.Count == 0))
         {
             editorActive = false;
+            clickDetector.SetActive(true);
+
         }
     }
 
@@ -60,20 +64,20 @@ public class SceneManager : MonoBehaviour
     {
         if (editorActive)
         {
-            timeLeft -= Time.deltaTime;
+            timeLeft -= Time.unscaledDeltaTime;
             timeLeftText.text = ((int)timeLeft).ToString();
         }
         else 
         {
-            TimeLeftObject.SetActive(false);
-            TimeLeftObject.transform.parent.gameObject.SetActive(false);
+            //TimeLeftObject.SetActive(false);
+            //TimeLeftObject.transform.parent.gameObject.SetActive(false);
         }
         if (timeLeft <= 0)
         {
             if (P1UIActive)
             {
                 GameObject newBuilding = Instantiate(P1DefaultBuilding);
-                newBuilding.transform.position = new Vector3(0, 0, 0);
+                newBuilding.transform.position = new Vector3(0, 1.5f, 0);
                 buttonScript.createBuilding(newBuilding);
                 FirstPlayerBuildings.Add(Instantiate(newBuilding));
                 P1UIActive = false;
