@@ -29,10 +29,13 @@ public class Creator : MonoBehaviour
          {
             GameObject currentPiece = objects[new Position(i, j)];
             if (Random.Range(0.0f, 1.0f) > 0.985f)
-	         {
-               Object treeToLoad = Resources.Load("Prefabs/Tree", typeof(GameObject));
+            {
+               bool loadTree = Random.Range(0.0f, 1.0f) > 0.5f;
+               Object treeToLoad;
+               if (loadTree) treeToLoad = Resources.Load("Prefabs/Tree", typeof(GameObject));
+               else treeToLoad = Resources.Load("Prefabs/Bush", typeof(GameObject));
                GameObject instance = Instantiate(treeToLoad, currentPiece.GetComponent<PieceOfTerrain>().MovablePart.transform) as GameObject;
-               instance.transform.Translate(0f, 4.0f, 0f);
+               instance.transform.Translate(-.5f, 4.7f, -1f);
                instance.transform.localScale = new Vector3(3f, 3f, 3f);
             }
 
