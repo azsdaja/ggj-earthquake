@@ -5,6 +5,7 @@ using UnityEngine;
 public class PieceOfTerrain : MonoBehaviour
 {
    public GameObject MovablePart;
+   private Rigidbody _rigidBody;
 
 	// Use this for initialization
 	void Start () {
@@ -12,7 +13,11 @@ public class PieceOfTerrain : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate () {
+	   //if (transform.position.y < 1f)
+	   //{
+	   //   _rigidBody = _rigidBody ?? GetComponent<Rigidbody>();
+      //   _rigidBody.velocity = Vector3.zero;
+	   //}
 	}
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Creator : MonoBehaviour
@@ -11,13 +10,16 @@ public class Creator : MonoBehaviour
 	void Start ()
 	{
 	   Object objectToLoad = Resources.Load("Prefabs/PieceOfTerrain", typeof(GameObject));
-	   const int gridSize = 30;
+	   const int gridSize = 50;
       var objects = new Dictionary<Position, GameObject>();
 	   for (int i = 0; i < gridSize; i++)
 	   {
 	      for (int j = 0; j < gridSize; j++)
 	      {
-            GameObject instance = Instantiate(objectToLoad, new Vector3(i, 0, j), Quaternion.identity) as GameObject;
+	         float iRescaled = (float) i/3f;
+	         float jRescaled = (float) j/4f;
+	         float height = Mathf.Sin(iRescaled) + Mathf.Cos(jRescaled);
+            GameObject instance = Instantiate(objectToLoad, new Vector3(i, .5f + height*.5f, j), Quaternion.identity) as GameObject;
 	         objects[new Position(i, j)] = instance;
 	      }
 	   }
@@ -29,9 +31,12 @@ public class Creator : MonoBehaviour
 	         GameObject currentPiece = objects[new Position(i, j)];
 	         var currentMovable = currentPiece.GetComponent<PieceOfTerrain>().MovablePart;
             var upperNeighbourPosition = new Position(i+1, j);
+
 	         JoinToNeighbour(objects, upperNeighbourPosition, currentMovable);
+
             var rightNeighbourPosition = new Position(i, j+1);
-	         JoinToNeighbour(objects, rightNeighbourPosition, currentMovable);
+
+            JoinToNeighbour(objects, rightNeighbourPosition, currentMovable);
 	      }
 	   }
 	   
@@ -46,7 +51,10 @@ public class Creator : MonoBehaviour
 
          var joint = currentMovable.AddComponent<SpringJoint>();
          joint.connectedBody = upperNeighbourMovable.GetComponent<Rigidbody>();
-         joint.spring = 50f;
+         joint.spring = 100f;
+         joint.damper = 0.1f;
+         joint.tolerance = 0f;
+         joint.enablePreprocessing = true;
       }
    }
 

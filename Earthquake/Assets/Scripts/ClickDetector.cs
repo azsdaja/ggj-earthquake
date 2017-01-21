@@ -21,7 +21,7 @@ public class ClickDetector : MonoBehaviour
          if (Physics.Raycast(ray, out hit))
          {
             //hit.transform.GetComponent<Rigidbody>().AddExplosionForce(9999999, Vector3.up, 0, 0);
-            hit.transform.GetComponent<Rigidbody>().AddForce(Vector3.up*100, ForceMode.Impulse);
+            hit.transform.GetComponent<Rigidbody>().AddForce(Vector3.up*40, ForceMode.Impulse);
          }
       }
    }
