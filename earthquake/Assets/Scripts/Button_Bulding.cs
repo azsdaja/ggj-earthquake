@@ -22,7 +22,6 @@ public class Button_Bulding : MonoBehaviour {
     {
         building = Instantiate(obj,new Vector3(0, 8.7f, 0), Quaternion.identity);
         selectedBuilding = true;
-        Debug.Log(building);
     }
     Vector3 newPosition;
     void Update()
@@ -70,6 +69,7 @@ public class Button_Bulding : MonoBehaviour {
                 }
 
             }
+            
         }
     }
 }

@@ -7,7 +7,7 @@ public class SceneManager : MonoBehaviour
 {
     public GameObject PlayerOneBuldingsText, PlayerTwoBuldingsText, TimeLeftObject;
 
-    public GameObject FirstPlayerUI, SecondPlayerUI;
+    public GameObject FirstPlayerUI, SecondPlayerUI, MarkerButton;
     public List<GameObject> FirstPlayerBuildings, SecondPlayerBuildings;
     public GameObject P1DefaultBuilding, P2DefaultBuilding;
     public bool P1UIActive = true, P2UIActive = true;
@@ -18,7 +18,7 @@ public class SceneManager : MonoBehaviour
     public float maxTime = 10;
     public float timeLeft;
     private Text timeLeftText;
-    public bool editorActive = true;
+    public bool editorActive = true, activatedMarker = false;
     void Start()
     {
         timeLeft = maxTime;
@@ -52,14 +52,18 @@ public class SceneManager : MonoBehaviour
             }
         }
 
-        if ((maxBuildings - SecondPlayerBuildings.Count == 0) && (maxBuildings - FirstPlayerBuildings.Count == 0))
+        if ((maxBuildings - SecondPlayerBuildings.Count == 0) && (maxBuildings - FirstPlayerBuildings.Count == 0) && activatedMarker == false)
         {
             editorActive = false;
-            clickDetector.SetActive(true);
-
+            MarkerButton.SetActive(true);
+            activatedMarker = true;
         }
     }
-
+    public void ActivateMarkerButton()
+    {
+        clickDetector.gameObject.SetActive(true);
+        MarkerButton.SetActive(false);
+    }
     void Update()
     {
         if (editorActive)

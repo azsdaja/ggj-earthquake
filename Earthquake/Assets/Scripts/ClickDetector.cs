@@ -7,10 +7,13 @@ public class ClickDetector : MonoBehaviour
     public bool P1Active = true, P2Active = false;
     public float placeTimeLeft, placeMaxTime = 5;
     public Text timeLeftText;
+    public GameObject FightButton; 
     GameObject P1Wave, P2Wave;
 
+    private bool waitForActive = false;
+    private float waitForActiveSec = 5;
     private int active=0;
-   
+    
    // Use this for initialization
    void Start()
    {
@@ -38,13 +41,13 @@ public class ClickDetector : MonoBehaviour
             placeTimeLeft = placeMaxTime;
             active++;
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && waitForActive == false)
       {
          RaycastHit hit;
          Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
          if (Physics.Raycast(ray, out hit))
          {
-                if (P1Active)
+                if (P1Active && hit.transform.tag == "Ground")
                 {
                     if (P1Wave == null)
                     {
@@ -57,8 +60,9 @@ public class ClickDetector : MonoBehaviour
                         P1Wave = hit.transform.gameObject;
                         P1Wave.GetComponent<Renderer>().material.color = Color.red;
                     }
+
                 }
-                if(P2Active)
+                if(P2Active && hit.transform.tag == "Ground")
                 {
                     if (P2Wave == null)
                     {
@@ -70,20 +74,42 @@ public class ClickDetector : MonoBehaviour
                         P2Wave.GetComponent<Renderer>().material.color = Color.white;
                         P2Wave = hit.transform.gameObject;
                         P2Wave.GetComponent<Renderer>().material.color = Color.blue;
-                    }                    
+                    }
+   
                 }
          }
       }
 
-        if (active == 2)
+        if (active == 2 && FightButton.activeSelf == false)
         {
-            StartEarthquake(P1Wave, 300);
-            StartEarthquake(P2Wave, 300);
-            active = 0;
-            P1Active = true;
-            P2Active = false;
-            placeTimeLeft = placeMaxTime;
+            waitForActive = true;
+            FightButton.SetActive(true);
+            waitForActiveSec = 5;
         }
+        if (waitForActive)
+        {
+            waitForActiveSec -= Time.unscaledDeltaTime;
+            timeLeftText.gameObject.SetActive(false);
+            if (waitForActiveSec <= 0)
+            {
+                active = 0;
+                P1Active = true;
+                P2Active = false;
+                placeTimeLeft = placeMaxTime;
+                FightButton.SetActive(false);
+                waitForActive = false;
+                timeLeftText.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    public void ActivateFightButton()
+    {
+        if (P1Wave) StartEarthquake(P1Wave, 300);
+        if (P2Wave) StartEarthquake(P2Wave, 300);
+        
+        
+        
     }
 
     void StartEarthquake(GameObject tile,int f)
