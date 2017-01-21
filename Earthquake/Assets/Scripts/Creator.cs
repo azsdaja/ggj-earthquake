@@ -10,7 +10,7 @@ public class Creator : MonoBehaviour
 	void Start ()
 	{
 	   Object objectToLoad = Resources.Load("Prefabs/PieceOfTerrain", typeof(GameObject));
-	   const int gridSize = 50;
+	   const int gridSize = 33;
       var objects = new Dictionary<Position, GameObject>();
 	   for (int i = 0; i < gridSize; i++)
 	   {

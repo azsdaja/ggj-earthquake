@@ -21,5 +21,14 @@ public class ClickDetectorPaint : MonoBehaviour
             hit.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * 100, ForceMode.Impulse);
          }
       }
+      if (Input.GetMouseButton(1))
+      {
+         RaycastHit hit;
+         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+         if (Physics.Raycast(ray, out hit))
+         {
+            hit.transform.GetComponent<Rigidbody>().AddForce(-Vector3.up * 100, ForceMode.Impulse);
+         }
+      }
    }
 }
