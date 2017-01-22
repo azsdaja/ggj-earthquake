@@ -25,12 +25,13 @@ public class Player : MonoBehaviour
       moveDirection.y -= gravity * Time.deltaTime;
       controller.Move(moveDirection * Time.deltaTime);
 
+      var moveDirectionHorizontal = new Vector3(moveDirection.x, 0f, moveDirection.z);
+
       var dropButtonName = PlayerName == "Blue" ? "Drop" : "DropB";
       if (_dynamite != null && Input.GetButton(dropButtonName))
       {
-         var moveDirectionHorizontal = new Vector3(moveDirection.x, 0f, moveDirection.z);
-         if (moveDirectionHorizontal.sqrMagnitude < .5f) _dynamite.transform.localPosition = new Vector3(0f, 1f, -2f);
-         else _dynamite.transform.localPosition = -moveDirectionHorizontal.normalized*2.5f + new Vector3(0f, 1f, 0f);
+         if (moveDirectionHorizontal.sqrMagnitude < .5f) _dynamite.transform.localPosition = new Vector3(0f, 1f, -1f);
+         else _dynamite.transform.localPosition = -moveDirectionHorizontal.normalized*1.5f + new Vector3(0f, 1f, 0f);
          _dynamite.transform.parent = null;
          _dynamite = null;
       }
