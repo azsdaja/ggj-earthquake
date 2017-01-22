@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
       controller.Move(moveDirection * Time.deltaTime);
 
       var dropButtonName = PlayerName == "Blue" ? "Drop" : "DropB";
-      if (Input.GetButton(dropButtonName))
+      if (_dynamite != null && Input.GetButton(dropButtonName))
       {
          var moveDirectionHorizontal = new Vector3(moveDirection.x, 0f, moveDirection.z);
          if (moveDirectionHorizontal.sqrMagnitude < .5f) _dynamite.transform.localPosition = new Vector3(0f, 1f, -2f);

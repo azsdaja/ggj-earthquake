@@ -11,7 +11,7 @@ public class Bomb : MonoBehaviour {
     private float initialLocalscale;
     void Start()
     {
-       healthBar = gameObject.transform.GetChild(0).gameObject;
+       healthBar = gameObject.transform.GetChild(1).gameObject;
        timePassed = 0;
     }
 
@@ -31,7 +31,7 @@ public class Bomb : MonoBehaviour {
         if (other.tag == "Ground" && explode)
         {
 
-            other.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * 50, ForceMode.Impulse);
+            other.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * 100, ForceMode.Impulse);
             Destroy(gameObject);
         }
     }
@@ -41,7 +41,7 @@ public class Bomb : MonoBehaviour {
         if (other.tag == "Ground" && explode)
         {
 
-            other.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * 50, ForceMode.Impulse);
+            other.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * 100, ForceMode.Impulse);
             Destroy(gameObject);
         }
     }
