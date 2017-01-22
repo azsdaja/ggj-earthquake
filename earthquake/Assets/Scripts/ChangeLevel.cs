@@ -14,7 +14,7 @@ public class ChangeLevel : MonoBehaviour {
     {
         if (Input.anyKey)
         {
-            Application.LoadLevel("Scene");
+            Application.LoadLevel("Level");
         }	
 	}
 }
