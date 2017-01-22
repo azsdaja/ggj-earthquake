@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    GameObject StolenDynamiteSound;
    public string PlayerName;
    public float speed = 6.0F;
    public float jumpSpeed = 8.0F;
@@ -44,5 +44,6 @@ public class Player : MonoBehaviour
          col.gameObject.transform.parent = transform; 
          col.gameObject.transform.localPosition = new Vector3(0f, 3f, 0f);
       }
-   }
+       
+    }
 }

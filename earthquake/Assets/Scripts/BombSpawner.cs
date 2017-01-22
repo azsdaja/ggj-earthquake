@@ -7,10 +7,17 @@ public class BombSpawner : MonoBehaviour {
 	
     public int gridSize = 30;
     public int maxSpawnTime=1;
-    public GameObject Bomb;
+    Dictionary<float, int> forces;
+    public GameObject bomb;
     private float timePassed;
 	void Start ()
     {
+        forces.Add(50.0f, 100);
+        forces.Add(60.0f, 150);
+        forces.Add(70.0f, 200);
+        forces.Add(80.0f, 250);
+        forces.Add(90.0f, 300);
+        forces.Add(100.0f, 350);
         SpawnBomb();
         timePassed = maxSpawnTime;    		
 	}
@@ -26,10 +33,18 @@ public class BombSpawner : MonoBehaviour {
 		    
 	}
 
+
+    
     void SpawnBomb()
     {
 
-        Instantiate(Bomb, new Vector3(Random.Range(1, gridSize), 6, Random.Range(1, gridSize)), Quaternion.identity);
+        float r = Random.Range(0.4f, 1.0f);
+        bomb.transform.localScale = new Vector3 (r, r, r);
+
+
+        bomb.GetComponent<Bomb>().explosionForce = Mathf.Round(bomb.transform.localScale.x * 100) * 6;
+        
+        Instantiate(bomb, new Vector3(Random.Range(1, gridSize), 6, Random.Range(1, gridSize)), Quaternion.identity);
     }
 
 }

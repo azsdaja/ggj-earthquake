@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour {
 
-    public float maxTimeToExplode;
-    private float timePassed;
+    public float maxTimeToExplode, explosionForce = 0;
+    public GameObject ExplosionSound, WaveSound;
+
+    private float timePassed, timer = 1;
     private GameObject healthBar;
     private bool explode = false;
-    private float initialLocalscale;
+    private GameObject l, pSystem;
+    private MeshRenderer healthRenderer, dynamiteRenderer;
     void Start()
     {
-       healthBar = gameObject.transform.GetChild(1).gameObject;
-       timePassed = 0;
+        l = gameObject.transform.GetChild(2).gameObject;
+        pSystem = gameObject.transform.GetChild(0).gameObject;
+        healthBar = gameObject.transform.GetChild(1).gameObject;
+        healthRenderer = healthBar.GetComponent<MeshRenderer>();
+        dynamiteRenderer = gameObject.GetComponent<MeshRenderer>();
+       timePassed = 0.6f;
     }
 
     void Update()
@@ -24,24 +31,38 @@ public class Bomb : MonoBehaviour {
         {
             explode = true;
         }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Ground" && explode)
+        else if (timePassed > maxTimeToExplode - (maxTimeToExplode * 0.5f) && timePassed <= maxTimeToExplode)
         {
+            timer -= Time.unscaledDeltaTime;
 
-            other.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * 100, ForceMode.Impulse);
-            Destroy(gameObject);
+            if (timer < 0)
+            {
+                if (healthRenderer.enabled == true)
+                {
+                    // l.SetActive(false);
+                    pSystem.SetActive(false);
+                    healthRenderer.enabled = false;
+                    dynamiteRenderer.enabled = false;
+                }
+                else if (healthRenderer.enabled == false)
+                {
+                    pSystem.SetActive(true);
+                    healthRenderer.enabled = true;
+                    dynamiteRenderer.enabled = true;
+                    //l.SetActive(true);
+                }
+                timer = 0.15f;
+            }
         }
     }
 
-    void OnTriggerStay(Collider other)
+        void OnTriggerStay(Collider other)
     {
         if (other.tag == "Ground" && explode)
         {
-
-            other.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * 100, ForceMode.Impulse);
+            Instantiate(ExplosionSound, gameObject.transform.position, Quaternion.identity);
+            Instantiate(WaveSound, gameObject.transform.position, Quaternion.identity);
+            other.transform.GetComponent<Rigidbody>().AddForce(Vector3.up * explosionForce, ForceMode.Impulse);
             Destroy(gameObject);
         }
     }
