@@ -9,11 +9,12 @@ public class Creator : MonoBehaviour
 	void Start ()
 	{
 	   Object objectToLoad = Resources.Load("Prefabs/PieceOfTerrain", typeof(GameObject));
-	   const int gridSize = 33;
+	   const int gridSizeI = 50;
+	   const int gridSizeJ = 35;
       var objects = new Dictionary<Position, GameObject>();
-	   for (int i = 0; i < gridSize; i++)
+	   for (int i = 0; i < gridSizeI; i++)
 	   {
-	      for (int j = 0; j < gridSize; j++)
+	      for (int j = 0; j < gridSizeJ; j++)
 	      {
 	         float iRescaled = (float) i/3f;
 	         float jRescaled = (float) j/4f;
@@ -23,9 +24,9 @@ public class Creator : MonoBehaviour
 	      }
 	   }
 
-	   for (int i = 0; i < gridSize; i++)
+	   for (int i = 0; i < gridSizeI; i++)
 	   {
-	      for (int j = 0; j < gridSize; j++)
+	      for (int j = 0; j < gridSizeJ; j++)
          {
             GameObject currentPiece = objects[new Position(i, j)];
             if (Random.Range(0.0f, 1.0f) > 0.985f)
