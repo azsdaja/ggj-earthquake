@@ -12,14 +12,41 @@ public class Building : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-      
+      Gizmos.color = Color.yellow;
+
+      var x = transform.rotation.eulerAngles;
+      Debug.Log(x);
+
+      float angleRange = 45f;
+      float angleZ = transform.rotation.eulerAngles.z;
+      float angleX = transform.rotation.eulerAngles.x;
+      if (CheckAngle(angleZ, angleRange) && CheckAngle(angleX, angleRange))
+      {
+         return;
+      }
+      Destroy(gameObject);
    }
 
    void OnDrawGizmos()
 	{
-      Gizmos.color = Color.yellow;
+      //Gizmos.color = Color.yellow;
+      //
+      //var x = transform.rotation.eulerAngles;
+      //Debug.Log(x);
+      //
+      //float angleRange = 45f;
+      //float angleZ = transform.rotation.eulerAngles.z;
+      //float angleX = transform.rotation.eulerAngles.x;
+      //if (CheckAngle(angleZ, angleRange) && CheckAngle(angleX, angleRange))
+      //{
+      //   return;
+      //}
+	   //Gizmos.DrawSphere(transform.position + Vector3.up * 3f, 1f);
+	}
 
-      var up = transform.TransformDirection(transform.localPosition);
-      Gizmos.DrawLine(transform.position, up);
+   private static bool CheckAngle(float angle, float angleRange)
+   {
+      return (angle > -1 && angle < angleRange) ||
+             (angle > (361 - angleRange) && angle < 361);
    }
 }
