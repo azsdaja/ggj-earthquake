@@ -1,0 +1,356 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960M  (ID=0x139b)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   10.18.15.4271
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills\WaverlyHills_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills\WaverlyHills_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills\WaverlyHills_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills\WaverlyHills_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills\WaverlyHills_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills\WaverlyHills_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills\WaverlyHills_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills\WaverlyHills_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills\WaverlyHills_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills\WaverlyHills_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.031 seconds
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills\WaverlyHills_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills\WaverlyHills_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.983606 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1584 -> priority: 1 
+  Thread -> id: 4b24 -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.933335 ms
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 1381.
+Total: 0.558617 ms (FindLiveObjects: 0.056098 ms CreateObjectMapping: 0.022123 ms MarkObjects: 0.220839 ms  DeleteObjects: 0.258765 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 46.892281 ms
+
+Unloading 50 unused Assets to reduce memory usage. Loaded Objects now: 2485.
+Total: 1.090766 ms (FindLiveObjects: 0.117728 ms CreateObjectMapping: 0.048592 ms MarkObjects: 0.376494 ms  DeleteObjects: 0.547160 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 54.182362 ms
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 1386.
+Total: 0.854519 ms (FindLiveObjects: 0.077037 ms CreateObjectMapping: 0.030419 ms MarkObjects: 0.310123 ms  DeleteObjects: 0.436543 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 41.815342 ms
+
+Unloading 50 unused Assets to reduce memory usage. Loaded Objects now: 2485.
+Total: 1.079704 ms (FindLiveObjects: 0.123654 ms CreateObjectMapping: 0.048197 ms MarkObjects: 0.355160 ms  DeleteObjects: 0.551901 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 44.570110 ms
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 1386.
+Total: 0.766815 ms (FindLiveObjects: 0.075456 ms CreateObjectMapping: 0.030419 ms MarkObjects: 0.294716 ms  DeleteObjects: 0.365827 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 42.914799 ms
+
+Unloading 50 unused Assets to reduce memory usage. Loaded Objects now: 2485.
+Total: 1.148050 ms (FindLiveObjects: 0.125629 ms CreateObjectMapping: 0.053728 ms MarkObjects: 0.415210 ms  DeleteObjects: 0.552691 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+

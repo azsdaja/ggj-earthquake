@@ -1,0 +1,68 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960M  (ID=0x139b)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   10.18.15.4271
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.028 seconds
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Pawel\Documents\ggj-earthquake\Earthquake\WaverlyHills_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.309532 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 3d14 -> priority: 1 
+  Thread -> id: 38f8 -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.057385 ms
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 1381.
+Total: 0.613926 ms (FindLiveObjects: 0.055703 ms CreateObjectMapping: 0.021728 ms MarkObjects: 0.224790 ms  DeleteObjects: 0.311308 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 39.493958 ms
+
+Unloading 50 unused Assets to reduce memory usage. Loaded Objects now: 2485.
+Total: 1.084050 ms (FindLiveObjects: 0.150123 ms CreateObjectMapping: 0.038321 ms MarkObjects: 0.442074 ms  DeleteObjects: 0.452741 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ClickDetectorPaint.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 38.637070 ms
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 1386.
+Total: 0.791704 ms (FindLiveObjects: 0.115753 ms CreateObjectMapping: 0.022913 ms MarkObjects: 0.233086 ms  DeleteObjects: 0.417580 ms)
+

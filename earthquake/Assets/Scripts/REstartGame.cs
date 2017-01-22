@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class REstartGame : MonoBehaviour {
-
+public class REstartGame : MonoBehaviour
+{
+   public string LevelName;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,6 +15,11 @@ public class REstartGame : MonoBehaviour {
 
     public void restartScene()
     {
-        Application.LoadLevel("Level");
+       string newLevel = "Levelworking";
+       if (LevelName == "Levelworking")
+       {
+          newLevel = "Levelworking2";
+      }
+        Application.LoadLevel(newLevel);
     }
 }
