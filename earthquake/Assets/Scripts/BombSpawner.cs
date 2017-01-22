@@ -6,7 +6,7 @@ public class BombSpawner : MonoBehaviour {
 
 	
     public int gridSize = 30;
-    public int maxSpawnTime=1;
+    public int maxSpawnTime=3;
     Dictionary<float, int> forces;
     public GameObject bomb;
     private float timePassed;
@@ -40,7 +40,6 @@ public class BombSpawner : MonoBehaviour {
 
         float r = Random.Range(0.4f, 1.0f);
         bomb.transform.localScale = new Vector3 (r, r, r);
-
 
         bomb.GetComponent<Bomb>().explosionForce = Mathf.Round(bomb.transform.localScale.x * 100) * 6;
         

@@ -10,11 +10,11 @@ public class Bomb : MonoBehaviour {
     private float timePassed, timer = 1;
     private GameObject healthBar;
     private bool explode = false;
-    private GameObject l, pSystem;
+    private GameObject lightlight, pSystem;
     private MeshRenderer healthRenderer, dynamiteRenderer;
     void Start()
     {
-        l = gameObject.transform.GetChild(2).gameObject;
+        //lightlight = gameObject.transform.GetChild(2).gameObject;
         pSystem = gameObject.transform.GetChild(0).gameObject;
         healthBar = gameObject.transform.GetChild(1).gameObject;
         healthRenderer = healthBar.GetComponent<MeshRenderer>();
@@ -39,7 +39,7 @@ public class Bomb : MonoBehaviour {
             {
                 if (healthRenderer.enabled == true)
                 {
-                    // l.SetActive(false);
+                    // lightlight.SetActive(false);
                     pSystem.SetActive(false);
                     healthRenderer.enabled = false;
                     dynamiteRenderer.enabled = false;
@@ -49,7 +49,7 @@ public class Bomb : MonoBehaviour {
                     pSystem.SetActive(true);
                     healthRenderer.enabled = true;
                     dynamiteRenderer.enabled = true;
-                    //l.SetActive(true);
+                    //lightlight.SetActive(true);
                 }
                 timer = 0.15f;
             }
